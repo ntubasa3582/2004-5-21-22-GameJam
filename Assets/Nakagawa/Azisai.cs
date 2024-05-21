@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class Azisai : MonoBehaviour
         _waterBar.value = 0;
         _waterBar.maxValue = _bloomCount;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (_isBlooming) { return; }
 
@@ -33,7 +34,7 @@ public class Azisai : MonoBehaviour
 
             if (_count >= _bloomCount)
             {
-                Debug.Log("ç‚¢‚½");
+                Debug.Log("ï¿½ç‚¢ï¿½ï¿½");
                 _renderer.sprite = _azisaiImages[Random.Range(0,_azisaiImages.Length)] ;
                 _isBlooming = true;
             }

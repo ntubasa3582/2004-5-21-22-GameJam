@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rain
+  - Player1Bullet
   layers:
   - Default
   - TransparentFX

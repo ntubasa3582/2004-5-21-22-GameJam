@@ -52,9 +52,7 @@ public class MouseDrag : MonoBehaviour
             {
                 _arrowPrefab.transform.localScale = new Vector3(1, distance+1, 1);
             }
-            Debug.Log(Vector2.Distance(_mouseDown, _mousePos));
             _arrowPrefab.transform.rotation = Quaternion.Euler(0, 0, angle);
-
         }
     }
 }
