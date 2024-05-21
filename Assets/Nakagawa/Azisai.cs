@@ -34,14 +34,14 @@ public class Azisai : MonoBehaviour
 
             if (_count >= _bloomCount)
             {
-                Debug.Log("�炢��");
+                Debug.Log("咲いた");
                 _renderer.sprite = _azisaiImages[Random.Range(0,_azisaiImages.Length)] ;
                 _isBlooming = true;
             }
         }
         else
         {
-            Debug.Log("ame");
+            // Debug.Log("ame");
         }
 
     }

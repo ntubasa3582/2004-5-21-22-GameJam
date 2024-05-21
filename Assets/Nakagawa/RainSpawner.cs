@@ -7,16 +7,27 @@ public class RainSpawner : MonoBehaviour
     [SerializeField] private GameObject _rainObject;
     [SerializeField] private float _interval;
 
+    float _timer;
     private void Start()
     {
-        StartCoroutine(SpawnInterval());
+        // StartCoroutine(SpawnInterval());
     }
-    private IEnumerator SpawnInterval()
+
+    void Update()
     {
-        while (true)
+        _timer += Time.deltaTime;
+        if (_timer > _interval)
         {
+            _timer = 0;
             Instantiate(_rainObject,transform.position,Quaternion.identity);
-            yield return new WaitForSeconds(_interval);
         }
     }
+    //
+    // private IEnumerator SpawnInterval()
+    // {
+    //     while (true)
+    //     {
+    //         yield return new WaitForSeconds(_interval);
+    //     }
+    // }
 }
