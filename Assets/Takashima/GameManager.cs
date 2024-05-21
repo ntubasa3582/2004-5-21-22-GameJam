@@ -46,26 +46,38 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-            _maintime -= Time.deltaTime;
-            _maincountdwun.text = _maintime.ToString("N0");
 
-        foreach(var azisai in _azisai)
+        _maintime -= Time.deltaTime;
+        _maincountdwun.text = _maintime.ToString("N0");
+
+        int count = 0;
+        foreach (var azisai in _azisai)
         {
-            if (!azisai.IsBlooming) { return; }
-            _winText.text = "雨の勝ち";
+            if (!azisai.IsBlooming)
+            {
+                return;
+            }
 
+            if (azisai.IsBlooming)
+            {
+                count++;
+            }
+
+            if (count >= _azisai.Length)
+            {
+                _winText.text = "雨の勝ち";
+            }
         }
+
         if (_maintime <= 0)
         {
             _winText.text = "風の勝ち";
             _maintime = 0;
         }
-
     }
 
     private IEnumerator StartCount()
     {
-
         yield return new WaitForSeconds(1);
         _countText.text = "3";
         yield return new WaitForSeconds(1);
