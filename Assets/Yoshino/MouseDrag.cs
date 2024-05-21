@@ -12,17 +12,17 @@ public class MouseDrag : MonoBehaviour
     Vector2 _arrowVectorStorage;
     void Start()
     {
-        _arrowVectorStorage = new Vector2(_arrowPrefab.transform.position.x, _arrowPrefab.transform.position.y);
+        
     }
 
     void Update()
     {
         _mousePos = Input.mousePosition;
         _mousePos = Camera.main.ScreenToWorldPoint(_mousePos);
-        //_arrowVector = _mousePos - _arrowVectorStorage;
+        
         _arrowVector = _mousePos - _mouseDown;
         float angle = Mathf.Atan2(_arrowVector.y * -1, _arrowVector.x * -1) * Mathf.Rad2Deg - 90f;
-        //_arrowPrefab.transform.rotation = Quaternion.Euler(0, 0, angle);
+        
         
         if (Input.GetMouseButtonDown(0))
         {
