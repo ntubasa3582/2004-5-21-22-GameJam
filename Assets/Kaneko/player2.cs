@@ -68,10 +68,13 @@ public class player2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player1Bullet"))
+        if (!_isAlpha)
         {
-            Stanfalse = false;
-            _rainSpawner.SetActive(false);
+            if (other.gameObject.CompareTag("Player1Bullet"))
+            {
+                Stanfalse = false;
+                _rainSpawner.SetActive(false);
+            }   
         }
     }
 }

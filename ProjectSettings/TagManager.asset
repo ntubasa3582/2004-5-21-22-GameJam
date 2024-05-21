@@ -6,14 +6,17 @@ TagManager:
   tags:
   - Rain
   - Player1Bullet
+  - PlayerBullet2
+  - DownWall
+  - Player2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player2Wall
   - Water
   - UI
-  - 
+  - Player1Bullet
   - 
   - 
   - 
