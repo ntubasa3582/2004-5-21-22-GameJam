@@ -330,7 +330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614157021319885077, guid: 3ec8eb2744ffb1d478a8e29437f1bfaa, type: 3}
       propertyPath: _mainutes
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5614157021319885077, guid: 3ec8eb2744ffb1d478a8e29437f1bfaa, type: 3}
       propertyPath: _azisai.Array.size
