@@ -15,7 +15,7 @@ public class RainSpawner : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(_rainObject);
+            Instantiate(_rainObject,transform.position,Quaternion.identity);
             yield return new WaitForSeconds(_interval);
         }
     }

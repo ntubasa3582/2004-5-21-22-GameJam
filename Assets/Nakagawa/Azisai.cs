@@ -7,6 +7,7 @@ public class Azisai : MonoBehaviour
 {
     [SerializeField] private int _bloomCount;
     [SerializeField] private Sprite[] _azisaiImages = new Sprite[9];
+    [SerializeField] private Slider _waterBar;
 
     private int _count;
     private bool _isBlooming;
@@ -17,6 +18,9 @@ public class Azisai : MonoBehaviour
     private void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
+
+        _waterBar.value = 0;
+        _waterBar.maxValue = _bloomCount;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +29,8 @@ public class Azisai : MonoBehaviour
         if (collision.gameObject.CompareTag("Rain"))
         {
             _count++;
+            _waterBar.value = _count;
+
             if (_count >= _bloomCount)
             {
                 Debug.Log("çÁÇ¢ÇΩ");
