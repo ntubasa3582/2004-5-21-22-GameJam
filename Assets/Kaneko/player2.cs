@@ -30,38 +30,41 @@ public class player2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _rb.velocity = _moveVector * _speed;
-
-        if (Stanfalse == false)
+        if (GameManager.Instance.IsStart)
         {
-            _time += Time.deltaTime;
-            if (_time >= _alphaTimerCount)
+            _moveVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            _rb.velocity = _moveVector * _speed;
+
+            if (Stanfalse == false)
             {
-                if (!_isAlpha)
+                _time += Time.deltaTime;
+                if (_time >= _alphaTimerCount)
                 {
-                    _isAlpha = true;
-                    _renderer.color = new Color(_playerColor.r, _playerColor.g, _playerColor.b, 0);
+                    if (!_isAlpha)
+                    {
+                        _isAlpha = true;
+                        _renderer.color = new Color(_playerColor.r, _playerColor.g, _playerColor.b, 0);
+                    }
+                    else
+                    {
+                        _isAlpha = false;
+                        _renderer.color = new Color(_playerColor.r, _playerColor.g, _playerColor.b, _playerColor.a);
+                    }
+
+                    _alphaTimerCount += _saveTimer;
                 }
-                else
+
+
+                if (_time >= _Stantime)
                 {
+                    Stanfalse = true;
+                    _rainSpawner.SetActive(true);
+                    _time = 0;
+
                     _isAlpha = false;
+                    _alphaTimerCount = _saveTimer;
                     _renderer.color = new Color(_playerColor.r, _playerColor.g, _playerColor.b, _playerColor.a);
                 }
-
-                _alphaTimerCount += _saveTimer;
-            }
-
-
-            if (_time >= _Stantime)
-            {
-                Stanfalse = true;
-                _rainSpawner.SetActive(true);
-                _time = 0;
-
-                _isAlpha = false;
-                _alphaTimerCount = _saveTimer;
-                _renderer.color = new Color(_playerColor.r, _playerColor.g, _playerColor.b, _playerColor.a);
             }
         }
     }

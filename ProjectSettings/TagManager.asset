@@ -9,6 +9,7 @@ TagManager:
   - PlayerBullet2
   - DownWall
   - Player2
+  - azisai
   layers:
   - Default
   - TransparentFX

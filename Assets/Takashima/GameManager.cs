@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    static GameManager instance = default;
+    public static GameManager Instance => instance;
 
     [SerializeField] float _time = 5f;
     [SerializeField] Text _countText;
@@ -18,7 +19,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] Azisai[] _azisai;
 
     public bool IsStart => _isStart;
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = GetComponent<GameManager>();
+            instance = this;
+        }
+    }
+
     void Start()
     {
         StartCoroutine(StartCount());
@@ -26,6 +36,7 @@ public class GameManager : MonoBehaviour
         _maincountdwun = GameObject.Find("maincounttime").GetComponent<Text>();
         _winText = GameObject.Find("winText").GetComponent<Text>();
         _maintime = _mainutes;
+        _isStart = false;
     }
 
     // Update is called once per frame
@@ -41,12 +52,12 @@ public class GameManager : MonoBehaviour
         foreach(var azisai in _azisai)
         {
             if (!azisai.IsBlooming) { return; }
-            _winText.text = "‰J‚ÌŸ‚¿";
+            _winText.text = "é›¨ã®å‹ã¡";
 
         }
         if (_maintime <= 0)
         {
-            _winText.text = "•—‚ÌŸ‚¿";
+            _winText.text = "é¢¨ã®å‹ã¡";
             _maintime = 0;
         }
 
@@ -66,6 +77,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         _countText.gameObject.SetActive(false);
         _isStart = true;
-
     }
 }

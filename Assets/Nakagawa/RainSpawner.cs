@@ -15,6 +15,8 @@ public class RainSpawner : MonoBehaviour
 
     void Update()
     {
+        if(!GameManager.Instance.IsStart) {return;}
+        
         _timer += Time.deltaTime;
         if (_timer > _interval)
         {
