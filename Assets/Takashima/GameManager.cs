@@ -48,8 +48,6 @@ public class GameManager : MonoBehaviour
 
         _maintime -= Time.deltaTime;
         _maincountdwun.text = _maintime.ToString("N0");
-
-        Debug.Log(_maintime);
         
         if (_maintime < 0.5f)
         {
