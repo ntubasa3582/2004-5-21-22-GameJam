@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     SceneScript _sceneScript;
     [SerializeField] Text _countText;
     [SerializeField] Text _maincountdwun;
-    [SerializeField] Text _winText;
+    //Text _winText;
     [SerializeField,Header("制限時間")] float _mainutes = 60f;
     float _maintime;
     private bool _isStart = false;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartCount());
         _countText = GameObject.Find("TimeCountText").GetComponent<Text>();
         _maincountdwun = GameObject.Find("maincounttime").GetComponent<Text>();
-        _winText = GameObject.Find("winText").GetComponent<Text>();
+        //_winText = GameObject.Find("winText").GetComponent<Text>();
         _maintime = _mainutes;
         _isStart = false;
     }
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         
         if (_maintime < 0.5f)
         {
-            _winText.text = "風の勝ち";
+            //_winText.text = "風の勝ち";
             _sceneScript.ChangeScene("Wind");
             _maintime = 0;
         }
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
             if (count >= _azisai.Length)
             {
-                _winText.text = "雨の勝ち";
+                //_winText.text = "雨の勝ち";
                 _sceneScript.ChangeScene("RainWin");
             }
         }
