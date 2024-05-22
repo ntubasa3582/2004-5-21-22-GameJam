@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614157021319885077, guid: 3ec8eb2744ffb1d478a8e29437f1bfaa, type: 3}
       propertyPath: _mainutes
-      value: 35
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5614157021319885077, guid: 3ec8eb2744ffb1d478a8e29437f1bfaa, type: 3}
       propertyPath: _sceneChange

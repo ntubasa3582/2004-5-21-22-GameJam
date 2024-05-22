@@ -7,11 +7,10 @@ public class GameManager : MonoBehaviour
     static GameManager instance = default;
     public static GameManager Instance => instance;
     SceneScript _sceneScript;
-    [SerializeField] float _time = 5f;
     [SerializeField] Text _countText;
     [SerializeField] Text _maincountdwun;
     [SerializeField] Text _winText;
-    [SerializeField] float _mainutes = 60f;
+    [SerializeField,Header("制限時間")] float _mainutes = 60f;
     float _maintime;
     private bool _isStart = false;
     [SerializeField] Azisai[] _azisai;
