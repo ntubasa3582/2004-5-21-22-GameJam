@@ -846,9 +846,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7237256505513237178, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237256505513237178, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 0125073c47bb8ff4ba43b00f73c6234c, type: 3}
+    - target: {fileID: 7237256505513237178, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237256505513237178, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230656351238095881, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230656351238095881, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9177455861882132572, guid: 472a35862aa45e245bb50b4e93ce053e, type: 3}
       propertyPath: m_Name
       value: Canvas1
