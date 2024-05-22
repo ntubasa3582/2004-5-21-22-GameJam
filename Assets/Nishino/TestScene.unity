@@ -339,7 +339,7 @@ MonoBehaviour:
   _audioSource: {fileID: 1175806992}
   _soundCount: 0
   _soundVolume: 1
-  _clickInterval: 3
+  _clickInterval: 1.5
 --- !u!4 &1175806991
 Transform:
   m_ObjectHideFlags: 0
