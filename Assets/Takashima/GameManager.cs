@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     static GameManager instance = default;
     public static GameManager Instance => instance;
-
+    SceneScript _sceneScript;
     [SerializeField] float _time = 5f;
     [SerializeField] Text _countText;
     [SerializeField] Text _maincountdwun;
@@ -27,6 +25,8 @@ public class GameManager : MonoBehaviour
             instance = GetComponent<GameManager>();
             instance = this;
         }
+
+        _sceneScript = GameObject.FindAnyObjectByType<SceneScript>();
     }
 
     void Start()
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         if (_maintime < 0.5f)
         {
             _winText.text = "風の勝ち";
+            _sceneScript.ChangeScene("Wind");
             _maintime = 0;
         }
 
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
             if (count >= _azisai.Length)
             {
                 _winText.text = "雨の勝ち";
+                _sceneScript.ChangeScene("RainWin");
             }
         }
     }

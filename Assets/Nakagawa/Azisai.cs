@@ -9,6 +9,7 @@ public class Azisai : MonoBehaviour
     [SerializeField] private int _bloomCount;
     [SerializeField] private Sprite[] _azisaiImages = new Sprite[9];
     [SerializeField] private Slider _waterBar;
+    [SerializeField,Header("花が咲いたときの大きさ") ] float _sizeValue = 1;
 
     private int _count;
     private bool _isBlooming;
@@ -36,6 +37,7 @@ public class Azisai : MonoBehaviour
             {
                 Debug.Log("咲いた");
                 _renderer.sprite = _azisaiImages[Random.Range(0,_azisaiImages.Length)] ;
+                transform.localScale = new Vector3(_sizeValue, _sizeValue, _sizeValue);
                 _isBlooming = true;
             }
         }
