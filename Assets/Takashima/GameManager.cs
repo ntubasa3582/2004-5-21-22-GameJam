@@ -50,6 +50,14 @@ public class GameManager : MonoBehaviour
         _maintime -= Time.deltaTime;
         _maincountdwun.text = _maintime.ToString("N0");
 
+        Debug.Log(_maintime);
+        
+        if (_maintime < 0.5f)
+        {
+            _winText.text = "風の勝ち";
+            _maintime = 0;
+        }
+
         int count = 0;
         foreach (var azisai in _azisai)
         {
@@ -67,12 +75,6 @@ public class GameManager : MonoBehaviour
             {
                 _winText.text = "雨の勝ち";
             }
-        }
-
-        if (_maintime <= 0)
-        {
-            _winText.text = "風の勝ち";
-            _maintime = 0;
         }
     }
 
